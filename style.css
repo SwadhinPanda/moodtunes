@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ececec;
+}
+.container {
+  display: flex;
+  position: absolute;
+  width: 60vw;
+  height: 60vh;
+  /* margin: auto; */
+  /* background: #ecf0f3; */
+  background: #e4ebf5;
+  /* background: #ececec; */
+  border-radius: 2rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+    -5px -5px 10px rgba(255, 255, 255, 0.5);
+}
+.controls {
+  display: flex;
+  position: relative;
+  top: -4rem;
+  left: 1rem;
+  gap: 1rem;
+  flex-direction: row;
+  height: fit-content;
+}
+
+input[type="checkbox"] {
+  height: 2.5rem;
+  width: 2.5rem;
+  appearance: none;
+  /* -webkit-appearance: none; */
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
+  /* position: absolute; */
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #5a5a5a;
+  font-size: 1rem;
+  font-family: FontAwesome;
+}
+
+#nightModeCheckbox:after {
+  content: "\f042";
+}
+#nightModeCheckbox:checked {
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4),
+    -4px -4px 14px rgba(255, 255, 255, 0.099);
+  border: 4px solid rgba(63, 63, 63, 0.35);
+}
+#nightModeCheckbox:checked::after {
+  color: rgba(0, 255, 221, 0.35);
+}
+#playBtn {
+  color: tomato;
+}
+#playBtn::after {
+  content: "\f144";
+}
+#playBtn:checked {
+  /* box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4), -4px -4px 14px rgba(255, 255, 255, 0.099); */
+  /* border: 4px solid rgba(0, 255, 221, 0.35); */
+  /* border: 4px solid rgba(105, 213, 105, 0.6); */
+  color: green;
+}
+#playBtn:checked > .timer {
+  border: 4px solid black;
+}
+.timer {
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
+  /* border: 3px solid rgba(128, 128, 128, 0.791); */
+  width: fit-content;
+  height: fit-content;
+  padding: 0.7rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  position: absolute;
+  top: -16%;
+  left: 50%;
+  transform: translate(-50%, -16%);
+  transition: running 3s linear infinite;
+}
+@keyframes running {
+  0% {
+    border: 3px solid grey;
+  }
+
+  100% {
+    border: 3px solid tomato;
+  }
+}
+#stopwatch {
+  font-family: monospace;
+  font-size: 18px;
+  color: grey;
+}
+a {
+  text-decoration: none;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: -4rem;
+  right: 1rem;
+  gap: 1rem;
+  height: fit-content;
+}
+.profile button {
+  height: 2.5rem;
+  width: 2.5rem;
+  appearance: none;
+  /* -webkit-appearance: none; */
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
+  /* position: absolute; */
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #5a5a5a;
+  font-size: 1rem;
+  font-family: FontAwesome;
+}
+
+#reset:after {
+  content: "\f2ea";
+}
+#reset:hover:after {
+  color: tomato;
+}
+.login:after {
+  content: "\f007";
+}
+.music {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60vw;
+  height: 60vh;
+  transform: translate(-50%, -50%);
+}
+.leftMusic {
+  gap: 4rem;
+  display: flex;
+  /* align-items: center; */
+  width: 50%;
+  flex-direction: column;
+  position: relative;
+  left: 2rem;
+  justify-content: center;
+}
+.rightMusic {
+  gap: 4rem;
+  display: flex;
+  /* align-items: center; */
+  width: 50%;
+  flex-direction: column;
+  position: relative;
+  left: 1.5rem;
+  justify-content: center;
+}
+.picture {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7,
+    inset -0.2rem -0.2rem 0.5rem white;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  display: flex;
+  /* position: absolute; */
+  top: -16%;
+  left: 50%;
+  align-items: center;
+  justify-content: center;
+}
+#wind:after {
+  font-family: FontAwesome;
+  content: "\f72e";
+  font-size: 1.7rem;
+  color: rgb(69, 83, 147);
+}
+#water:after {
+  font-family: FontAwesome;
+  content: "\f773";
+  font-size: 1.7rem;
+  color: rgb(69, 83, 147);
+}
+#rain:after {
+  font-family: FontAwesome;
+  content: "\f73d";
+  font-size: 1.7rem;
+  color: rgb(69, 83, 147);
+}
+#fire:after {
+  font-family: FontAwesome;
+  content: "\f06d";
+  font-size: 1.7rem;
+  color: rgb(69, 83, 147);
+}
+#bird:after {
+  font-family: FontAwesome;
+  content: "\f4ba";
+  font-size: 1.7rem;
+  color: rgb(69, 83, 147);
+}
+#forest:after {
+  font-family: FontAwesome;
+  content: "\f55f";
+  font-size: 1.7rem;
+  color: rgb(69, 83, 147);
+}
+.audio-control {
+  position: absolute;
+}
+.audio-control input {
+  appearance: none;
+  border-radius: 3rem;
+  height: 2rem;
+  width: 15rem;
+  left: 10rem;
+  position: relative;
+  outline: none;
+  background: none;
+  box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7,
+    inset -0.2rem -0.2rem 0.5rem white;
+}
+.audio-control input::-webkit-slider-thumb {
+  border: 1rem solid black;
+}
+
+audio {
+  display: none;
+}
+
+.social {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  position: absolute;
+  transform: translate(-50%, -90%);
+  top: 90%;
+  left: 50%;
+}
+
+.social-link {
+  color: gray;
+  background: #ecf0f3;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  transition: transform 500ms;
+}
+
+.social-link:hover {
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.22),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.5),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 0.85),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.01);
+  transform: translateY(2px);
+  transition: transform 500ms;
+}
+
+.social-link:hover > svg {
+  transform: scale(0.85);
+}
+
+a:hover .bi-facebook {
+  color: rgb(78, 136, 224);
+}
+a:hover .bi-instagram {
+  color: rgb(235, 128, 181);
+}
+a:hover .bi-snapchat {
+  color: rgb(205, 198, 64);
+}
+a:hover .bi-youtube {
+  color: rgb(227, 74, 74);
+}
+a:hover .bi-whatsapp {
+  color: rgb(116, 197, 35);
+}
+a:hover .bi-github {
+  color: rgb(223, 119, 199);
+}
+a:hover .bi-linkedin {
+  color: rgb(68, 108, 237);
+}
+
+/* Night Mode */
+
+body.night-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+body.night-mode .container {
+  background-color: rgba(70, 70, 70, 0.12);
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4),
+    -4px -4px 14px rgba(255, 255, 255, 0.099);
+}
+body.night-mode input[type="checkbox"] {
+  border: none;
+}
+body.night-mode #playBtn {
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4),
+    -4px -4px 14px rgba(255, 255, 255, 0.099);
+  color: tomato;
+}
+body.night-mode #playBtn:checked::after {
+  color: rgba(0, 255, 221, 0.35);
+}
+body.night-mode #playBtn:checked {
+  border: 4px solid rgba(63, 63, 63, 0.35);
+}
+body.night-mode .profile button {
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4),
+    -4px -4px 14px rgba(255, 255, 255, 0.099);
+  background: none;
+}
+body.night-mode .login:after {
+  color: rgba(135, 255, 0, 0.5);
+}
+body.night-mode .timer {
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4),
+    -4px -4px 14px rgba(255, 255, 255, 0.099);
+}
+body.night-mode .social-link {
+  background: none;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4),
+    -4px -4px 14px rgba(255, 255, 255, 0.099);
+}
+body.night-mode .social-link:hover {
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.22),
+    inset -4px -4px 6px -1px rgb(39 33 33 / 50%),
+    -0.5px -0.5px 0px rgb(35 35 35 / 85%), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+    0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+body.night-mode #reset {
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4),
+    -4px -4px 14px rgba(255, 255, 255, 0.099);
+}
+body.night-mode .picture {
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.22),
+    inset -4px -4px 6px 20px rgb(39 33 33 / 50%),
+    -0.5px -0.5px 0px rgb(35 35 35 / 85%), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+    0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+body.night-mode .audio-control input {
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.22),
+    inset -4px -4px 6px 20px rgb(39 33 33 / 50%),
+    -0.5px -0.5px 0px rgb(35 35 35 / 85%), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+    0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
