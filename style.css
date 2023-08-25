@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Bruno+Ace&family=Comfortaa:wght@500&family=Lobster&family=Pacifico&family=Tinos&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,25 @@
 
 body {
   background: #ececec;
+}
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  /* color: rgba(128, 128, 128, 0.927); */
+  padding: 1rem;
+  /* text-shadow: inset 2px 2px 5px salmon; */
+  /* text-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem white; */
+  /* font-family: "Alumni Sans Inline One", cursive; */
+  font-family: "Bruno Ace", cursive;
+  /* font-family: "Comfortaa", cursive; */
+  /* font-family: "Lobster", cursive; */
+  /* font: bold 200px arial, sans-serif; */
+  background-color: #b5b5b5;
+  color: transparent;
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
 }
 .container {
   display: flex;
@@ -316,6 +336,15 @@ body.night-mode {
   background-color: #333;
   color: #fff;
 }
+body.night-mode h1{
+  background-color: black;
+  color: transparent;
+  text-shadow: 1px 1px 3px rgb(51 51 51);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+  
+}
 
 body.night-mode .container {
   background-color: rgba(70, 70, 70, 0.12);
@@ -374,4 +403,31 @@ body.night-mode .audio-control input {
     inset -4px -4px 6px 20px rgb(39 33 33 / 50%),
     -0.5px -0.5px 0px rgb(35 35 35 / 85%), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
     0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsiveness  */
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90vw;
+  }
+  .audio-control {
+    display: none;
+  }
+  .social {
+    transform: translate(-50%, -93%);
+    top: 93%;
+  }
+  .controls,
+  .profile {
+    gap: 8px;
+  }
+  .timer {
+    width: 4rem;
+    align-items: center;
+    justify-content: center;
+    top: -12%;
+    left: 50%;
+    transform: translate(-50%, -13%);
+  }
 }
